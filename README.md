@@ -25,7 +25,7 @@ Dokumentasi yang mencakup instalasi dan konfigurasi **FTP Server** berbasis **vs
 
 ## 🎯 2. Tujuan
 
-Membangun layanan **FTP Server** menggunakan **vsftpd** dengan konfigurasi keamanan dan kolaborasi tingkat dasar hingga menengah.
+Membangun layanan **FTP Server** menggunakan `vsftpd` dengan konfigurasi keamanan dan kolaborasi tingkat dasar hingga menengah.
 
 ### Cakupan:
 
@@ -210,12 +210,15 @@ Pastikan opsi **"Require explicit FTP over TLS"** diaktifkan untuk keamanan.
 ![File Berhasil Dibuat](./assets/img/Screenshot%20from%202025-06-11%2013-30-32.png)
 
 > Login Melalui Perangkat Klien Mobile.
+
 ![Antarmuka Login Via Mobile](./assets/img/Screenshot_2025-06-11-13-35-05-463_lysesoft.andftp.jpg)
 
 > Klien mobile berhasil login.
+
 ![Login Via Klien Mobile](./assets/img/IMG_20250611_135513.jpg)
 
 > Memantau konektivitas protokol FTP antara server dan klien menggunakan wireshark.
+
 ![Monitoring Konektivitas Dengan Wireshark](./assets/img/Screenshot%20from%202025-06-11%2013-36-46.png)
 
 ---
