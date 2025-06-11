@@ -17,6 +17,10 @@ Dokumentasi yang mencakup instalasi dan konfigurasi **FTP Server** berbasis **vs
 * LAN Prefix: `192.168.12.0/24`
 * Mode Adapter: Bridged Adapter
 
+### Topologi
+
+![Topologi](./assets/img/Screenshot%20from%202025-06-11%2012-35-07.png)
+
 ---
 
 ## 🎯 2. Tujuan
