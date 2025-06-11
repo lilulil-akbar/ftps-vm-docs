@@ -62,6 +62,21 @@ sudo apt install vsftpd
 systemctl status vsftpd
 ```
 
+```yaml
+● vsftpd.service - vsftpd FTP server
+     Loaded: loaded (/lib/systemd/system/vsftpd.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2025-06-06 10:22:45 WIB; 1h 23min ago
+       Docs: man:vsftpd(8)
+   Main PID: 1098 (vsftpd)
+      Tasks: 1 (limit: 4567)
+     Memory: 1.4M
+        CPU: 24ms
+     CGroup: /system.slice/vsftpd.service
+             └─1098 /usr/sbin/vsftpd /etc/vsftpd.conf
+
+Jun 06 10:22:45 ubuntu-server systemd[1]: Started vsftpd FTP server.
+
+```
 ### Backup Konfigurasi Awal
 
 ```bash
