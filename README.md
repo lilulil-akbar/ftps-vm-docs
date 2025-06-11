@@ -221,9 +221,12 @@ Pastikan opsi **"Require explicit FTP over TLS"** diaktifkan untuk keamanan.
 
 ![Login Via Klien Mobile](./assets/img/IMG_20250611_135513.jpg)
 
-> Memantau konektivitas protokol FTP antara server dan client menggunakan wireshark.
+> Memantau konektivitas protokol FTP antara server dan client menggunakan `Wireshark`.
 
 ![Monitoring Konektivitas Dengan Wireshark](./assets/img/Screenshot%20from%202025-06-11%2013-36-46.png)
+
+> **Catatan:**
+> File hasil pengujian dalam format `.pcapng` tersedia pada sub-direktori `testing`, berisi rekaman koneksi FTP dengan dan tanpa enkripsi SSL/TLS menggunakan sertifikat self-signed. Untuk keperluan analisis lebih lanjut, file ini dapat dibuka menggunakan `Wireshark`.
 
 ---
 
