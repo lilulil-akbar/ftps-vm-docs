@@ -176,7 +176,7 @@ sudo systemctl restart vsftpd
 
 2. **Passive Mode**:
 
-   * Port data acak, contoh `40000–50000`
+   * Port data acak, dengan rentang `40000–50000`
    * Perlu diizinkan di firewall
 
 3. **Mode Koneksi**:
@@ -324,7 +324,7 @@ Dokumentasi ini disusun sebagai:
 * Referensi konfigurasi ulang
 * Studi kasus keamanan lokal
 
-**Disusun oleh**: Ulil Akbar
+**Disusun oleh**: Ulil Akbar <br />
 **Tanggal**: 06 Juni 2025
 
 ---
