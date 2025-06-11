@@ -1,6 +1,6 @@
 # 📦 Instalasi & Konfigurasi FTP Server dengan vsftpd di Ubuntu VM
 
-Dokumentasi yang mencakup instalasi dan konfigurasi **FTP Server** berbasis **vsftpd** di mesin virtual Ubuntu. Termasuk implementasi fitur keamanan dengan SSL/TLS self-signed, Passive Mode, dan sruktur direktori kolaboratif. Melakukan pengujian melalui perangkat desktop maupun mobile, untuk memastikan bahwa layanan berjalan dengan baik. Kemudian tindakan toubleshooting terhadap error/kesalahan yang di temukan selama proses pengujian.
+Dokumentasi yang mencakup instalasi dan konfigurasi **FTP Server** berbasis **vsftpd** di mesin virtual Ubuntu. Termasuk implementasi fitur keamanan dengan SSL/TLS self-signed, Passive Mode, dan sruktur direktori kolaboratif. Melakukan pengujian melalui perangkat desktop maupun mobile, untuk memastikan bahwa layanan berjalan dengan baik. Disertai tindakan troubleshooting terhadap penemuan error/kesalahan selama pengujian dengan penyesuaian skenario dunia nyata.
 
 ---
 
@@ -66,7 +66,7 @@ sudo apt install vsftpd
 systemctl status vsftpd
 ```
 
-```yaml
+```bash
 ● vsftpd.service - vsftpd FTP server
      Loaded: loaded (/lib/systemd/system/vsftpd.service; enabled; preset: enabled)
      Active: active (running) since Fri 2025-06-06 10:22:45 WIB; 1h 23min ago
@@ -103,7 +103,7 @@ Penjelasan:
 * Port 21: koneksi kontrol
 * Port 20: koneksi data (Active Mode)
 
-### Pembuatan Akun FTP
+### Pembuatan Akun/Kredensial FTP
 
 ```bash
 sudo useradd -N ftp-user
@@ -121,14 +121,14 @@ sudo chown nobody:nogroup /srv/ftp/
 sudo usermod -d /srv/ftp/ ftp-user
 ```
 
-### Folder Kolaboratif (Shared)
+### Direktori Kolaboratif (/shared/)
 
 ```bash
 sudo mkdir -p /srv/ftp/shared
 sudo chown root:ftp-group /srv/ftp/shared/
 ```
 
-### Uji File Dummy
+### Buat File Dummy
 
 ```bash
 cd /srv/ftp/shared/
@@ -165,6 +165,10 @@ sudo systemctl restart vsftpd
 | `/srv/ftp/`        | Read-only untuk user FTP        |
 | `/srv/ftp/shared/` | Read-write untuk grup ftp-group |
 
+> **Catatan:** <br />
+> * Direktori `/srv/ftp/` digunakan sebagai home-dir untuk setiap kredensial pengguna FTP.
+> * Direktori `/srv/ftp/shared/` di konfigurasi untuk penggunaan kolaboratif. Semua kredensial pengguna yang tergabung di dalam grup `ftp-group` memiliki akses penuh terhadap direktori `/shared/`.
+
 ---
 
 ## 🌐 8. Port & Mode Akses
@@ -197,27 +201,27 @@ Pastikan opsi **"Require explicit FTP over TLS"** diaktifkan untuk keamanan.
 
 ### Dokumentasi Pengujian:
 
-> Klien desktop berhasil login.
+> Client desktop berhasil login.
 
 ![Login Via Desktop](./assets/img/Screenshot%20from%202025-06-11%2013-29-28.png)
 
-> Buat file baru di dalam direktori FTP Server melalui perangkat klien desktop.
+> Buat file baru di dalam direktori FTP Server melalui perangkat client desktop.
 
 ![Buat File Baru](./assets/img/Screenshot%20from%202025-06-11%2013-30-23.png)
 
-> File baru berhasil dibuat dan tersimpan di dalam direktori FTP Server.
+> File baru berhasil dibuat dan tersimpan di dalam direktori FTP server.
 
 ![File Berhasil Dibuat](./assets/img/Screenshot%20from%202025-06-11%2013-30-32.png)
 
-> Login Melalui Perangkat Klien Mobile.
+> Login melalui perangkat client Mobile.
 
 ![Antarmuka Login Via Mobile](./assets/img/Screenshot_2025-06-11-13-35-05-463_lysesoft.andftp.jpg)
 
-> Klien mobile berhasil login.
+> Client mobile berhasil login.
 
 ![Login Via Klien Mobile](./assets/img/IMG_20250611_135513.jpg)
 
-> Memantau konektivitas protokol FTP antara server dan klien menggunakan wireshark.
+> Memantau konektivitas protokol FTP antara server dan client menggunakan wireshark.
 
 ![Monitoring Konektivitas Dengan Wireshark](./assets/img/Screenshot%20from%202025-06-11%2013-36-46.png)
 
