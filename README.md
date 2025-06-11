@@ -195,6 +195,29 @@ sudo systemctl restart vsftpd
 
 Pastikan opsi **"Require explicit FTP over TLS"** diaktifkan untuk keamanan.
 
+### Dokumentasi Pengujian:
+
+> Klien desktop berhasil login.
+
+![Login Via Desktop](./assets/img/Screenshot%20from%202025-06-11%2013-29-28.png)
+
+> Buat file baru di dalam direktori FTP Server melalui perangkat klien desktop.
+
+![Buat File Baru](./assets/img/Screenshot%20from%202025-06-11%2013-30-23.png)
+
+> File baru berhasil dibuat dan tersimpan di dalam direktori FTP Server.
+
+![File Berhasil Dibuat](./assets/img/Screenshot%20from%202025-06-11%2013-30-32.png)
+
+> Login Melalui Perangkat Klien Mobile.
+![Antarmuka Login Via Mobile](./assets/img/Screenshot_2025-06-11-13-35-05-463_lysesoft.andftp.jpg)
+
+> Klien mobile berhasil login.
+![Login Via Klien Mobile](./assets/img/IMG_20250611_135513.jpg)
+
+> Memantau konektivitas protokol FTP antara server dan klien menggunakan wireshark.
+![Monitoring Konektivitas Dengan Wireshark](./assets/img/Screenshot%20from%202025-06-11%2013-36-46.png)
+
 ---
 
 ## ⚙️ 10. Konfigurasi Tambahan
